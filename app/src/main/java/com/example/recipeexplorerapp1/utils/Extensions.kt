@@ -1,7 +1,9 @@
 package com.example.recipeexplorerapp1.utils
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
 import android.os.Build
 import android.view.View
 import androidx.annotation.IdRes
@@ -26,4 +28,15 @@ inline fun <reified T : Serializable> Intent.serializable(key: String): T? = whe
     )
 
     else -> @Suppress("DEPRECATION") getSerializableExtra(key) as? T
+}
+
+fun Activity.isDeviceOnline(): Boolean {
+    val manager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    val networkInfo = manager.activeNetworkInfo
+    var isAvailable = false
+    if (networkInfo != null && networkInfo.isConnected) {
+        // Network is present and connected
+        isAvailable = true
+    }
+    return isAvailable
 }

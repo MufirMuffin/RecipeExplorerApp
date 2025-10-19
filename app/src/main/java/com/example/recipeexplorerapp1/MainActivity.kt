@@ -163,10 +163,8 @@ class MainActivity : BaseActivity(), IMainView, TextWatcher {
 
     private fun applyFilters() {
         if (currentSearchQuery.isEmpty() && currentDifficultyFilter == "All") {
-            // No filters applied, show all recipes
             showAllRecipes()
         } else {
-            // Apply filters
             filterRecipes()
         }
     }
