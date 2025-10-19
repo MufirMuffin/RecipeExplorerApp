@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -25,8 +26,8 @@ class RecipeDetailsActivity : BaseActivity(), IRecipeDetailsView {
     private lateinit var toolbarTitle: TextView
     private lateinit var recipeImage: ImageView
     private lateinit var recipeName: TextView
-    private lateinit var cuisineText: TextView
-    private lateinit var difficultyText: TextView
+    private lateinit var cuisineChip: Chip
+    private lateinit var difficultyChip: Chip
     private lateinit var prepTimeText: TextView
     private lateinit var cookTimeText: TextView
     private lateinit var servingsText: TextView
@@ -68,10 +69,11 @@ class RecipeDetailsActivity : BaseActivity(), IRecipeDetailsView {
     private fun initViews() {
         appBar = bind(R.id.app_bar)
         toolbarTitle = bind(R.id.toolbar_title)
+
         recipeImage = bind(R.id.recipe_detail_image)
         recipeName = bind(R.id.recipe_name)
-        cuisineText = bind(R.id.cuisine_text)
-        difficultyText = bind(R.id.difficulty_text)
+        cuisineChip = bind(R.id.cuisine_chip)
+        difficultyChip = bind(R.id.difficulty_chip)
         prepTimeText = bind(R.id.prep_time_text)
         cookTimeText = bind(R.id.cook_time_text)
         servingsText = bind(R.id.servings_text)
@@ -111,12 +113,14 @@ class RecipeDetailsActivity : BaseActivity(), IRecipeDetailsView {
 
         // Set basic info
         recipeName.text = recipe.title
-        cuisineText.text = recipe.cuisine
-        difficultyText.text = recipe.difficulty
         prepTimeText.text = "${recipe.prepTimeMinutes} min"
         cookTimeText.text = "${recipe.cookTimeMinutes} min"
-        servingsText.text = "${recipe.servings} servings"
+        servingsText.text = recipe.servings.toString()
         caloriesText.text = "${recipe.caloriesPerServing} cal"
+
+        cuisineChip.text = recipe.cuisine
+        setDifficultyChip(recipe.difficulty)
+        difficultyChip.text = recipe.difficulty
 
         // Display ingredients
         ingredientsContainer.removeAllViews()
@@ -150,10 +154,30 @@ class RecipeDetailsActivity : BaseActivity(), IRecipeDetailsView {
             chip.isClickable = false
             chip.isCheckable = false
             chip.setChipBackgroundColorResource(R.color.chip_background)
-            chip.setTextColor(ContextCompat.getColor(this, R.color.chip_text))
+            chip.setTextColor(ContextCompat.getColor(this, R.color.black))
             tagsChipGroup.addView(chip)
         }
 
         showContent()
+    }
+
+    // Set difficulty chip color based on difficulty level - FIXED IMPLEMENTATION
+    private fun setDifficultyChip(difficulty: String) {
+        val colorRes = when (difficulty.lowercase()) {
+            "easy" -> R.color.easy_difficulty
+            "medium" -> R.color.medium_difficulty
+            "hard" -> R.color.hard_difficulty
+            else -> R.color.chip_background
+        }
+        difficultyChip.setChipBackgroundColorResource(colorRes)
+
+        // Also set text color for better contrast
+        val textColorRes = when (difficulty.lowercase()) {
+            "easy" -> R.color.green_dark
+            "medium" -> R.color.orange_dark
+            "hard" -> R.color.red_dark
+            else -> R.color.black
+        }
+        difficultyChip.setTextColor(ContextCompat.getColor(this, textColorRes))
     }
 }
