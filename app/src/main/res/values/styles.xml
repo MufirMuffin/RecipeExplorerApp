@@ -1,0 +1,392 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">@color/colorToolbar</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+        <item name="chipStyle">@style/Chip.Choice</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/colorToolbar</item>
+    </style>
+
+    <style name="AppTheme.NoActionBarAndStatus" parent="AppTheme.NoActionBar">
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="AppTheme.NoActionBarWhite" parent="AppTheme.NoActionBar">
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+<!--        <item name="android:background">@drawable/rounded_dialog</item>-->
+    </style>
+
+    <style name="Theme.App.Starting" parent="AppTheme.NoActionBar">
+        <item name="windowSplashScreenBackground">@color/colorToolbar</item>
+<!--        <item name="android:windowBackground">@drawable/splash_logo</item>-->
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="colorControlNormal">@color/black</item>
+<!--        <item name="homeAsUpIndicator">@drawable/back_button_2</item>-->
+    </style>
+
+    <style name="CustomCardViewStyle" parent="Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay_card_custom_corners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">30dp</item>
+        <item name="cornerSizeTopLeft">30dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <!--close X button-->
+    <style name="AppTheme.AppBarOverlayClose" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="colorControlNormal">@color/black</item>
+<!--        <item name="homeAsUpIndicator">@drawable/ic_close_black_24dp</item>-->
+        <item name="android:textColorSecondary">@color/black</item>
+    </style>
+
+    <!--fullscreen dialog-->
+    <style name="AppTheme.FullScreenDialog" parent="Theme.Material3.Light.Dialog">
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="actionMenuTextColor">@color/colorAccent</item>
+    </style>
+
+    <!--dialog slide animation-->
+    <style name="AppTheme.Slide">
+<!--        <item name="android:windowEnterAnimation">@anim/slide_up</item>-->
+<!--        <item name="android:windowExitAnimation">@anim/slide_down</item>-->
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <style name="Theme.Transparent" parent="Theme.MaterialComponents">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <!--image picker theme-->
+    <style name="LibAppTheme" parent="AppTheme.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorToolbar</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@android:color/black</item>
+        <item name="color">@color/black</item>
+        <item name="actionMenuTextColor">@color/black</item>
+<!--        <item name="android:homeAsUpIndicator">@drawable/back_button_2</item>-->
+        <item name="android:colorBackground">@android:color/background_light</item>
+        <item name="android:windowBackground">@android:color/white</item>
+<!--        <item name="toolbarStyle">@style/ToolbarTheme</item>-->
+<!--        <item name="tabStyle">@style/PickerTabLayout</item>-->
+
+    </style>
+
+    <style name="LibAppTheme.ToolbarTheme" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="materialThemeOverlay">@style/AppTheme.AppBarOverlay</item>
+        <item name="android:theme">@style/AppTheme.AppBarOverlay</item>
+    </style>
+
+    <style name="LibAppTheme.ThemeOverlay" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <item name="colorOnPrimary">@android:color/black</item>
+    </style>
+
+    <!-- Custom alert dialog -->
+    <style name="CustomAlertDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+<!--        <item name="android:windowBackground">@drawable/card_view_bg</item>-->
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowMinWidthMinor">85%</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Alert.Button.Positive</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Alert.Button.Negative</item>
+    </style>
+
+    <style name="CustomBroadcastDialog" parent="Theme.Material3.Light.Dialog.Alert">
+<!--        <item name="android:windowBackground">@drawable/card_view_bg</item>-->
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowMinWidthMinor">85%</item>
+    </style>
+
+    <style name="Alert.Button.Positive" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textSize">@dimen/font_14</item>
+    </style>
+
+    <style name="Alert.Button.Negative" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/gray</item>
+        <item name="android:textColor">@color/dark_gray_1</item>
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="textAllCaps">true</item>
+        <item name="android:textSize">@dimen/font_14</item>
+    </style>
+
+    <!--chip style-->
+    <style name="Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
+<!--        <item name="chipBackgroundColor">@color/bg_chip_state_list</item>-->
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+        <item name="android:textSize">@dimen/font_14</item>
+    </style>
+
+    <style name="Chip.Choice.Button" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/white</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="elevation">2dp</item>
+<!--        <item name="chipStrokeColor">@color/stroke_chip_state_color</item>-->
+        <item name="chipSurfaceColor">?attr/colorSurface</item>
+        <item name="shapeAppearanceOverlay">?attr/shapeAppearanceSmallComponent</item>
+<!--        <item name="android:textColor">@color/text_chip_state_color</item>-->
+        <item name="android:textFontWeight" tools:targetApi="p">700</item>
+        <item name="android:textSize">@dimen/font_14</item>
+        <!-- add elevation on xml -->
+    </style>
+
+    <style name="so_card_row">
+        <item name="android:padding">4dp</item>
+
+    </style>
+
+    <style name="so_card_tv">
+        <item name="android:layout_marginRight">4dp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:padding">3dp</item>
+    </style>
+
+    <style name="vline">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/black_14</item>
+    </style>
+
+    <style name="hline">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/black_14</item>
+    </style>
+
+    <style name="option_menu_btn" parent="@style/Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:paddingLeft">14dp</item>
+        <item name="android:paddingRight">14dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="title_tv">
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:textSize">@dimen/font_14</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black_87</item>
+    </style>
+
+    <style name="title_tv2">
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:textSize">@dimen/font_14</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black_87</item>
+    </style>
+
+    <style name="subtitle_tv">
+
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:textSize">@dimen/font_12</item>
+        <item name="android:textColor">@color/black_54</item>
+    </style>
+
+    <style name="subtitle_tv2">
+        <item name="android:gravity">start</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:textSize">@dimen/font_12</item>
+        <item name="android:textColor">@color/black_54</item>
+    </style>
+
+    <style name="text_tv">
+
+        <item name="android:textSize">@dimen/font_16</item>
+<!--        <item name="android:textColor">@color/black_87</item>-->
+        <item name="android:textColor">#7D7D7D</item>
+        <item name="android:layout_marginRight">4dp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:padding">3dp</item>
+    </style>
+
+
+    <style name="text_timestamp_tv">
+
+        <item name="android:textSize">@dimen/font_13</item>
+        <item name="android:textColor">@color/black_87</item>
+        <item name="android:gravity">start</item>
+        <item name="android:padding">3dp</item>
+    </style>
+
+    <color name="black_14">#e1e1e1</color>
+
+
+    <style name="title_input_tv">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:textSize">@dimen/font_12</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black_87</item>
+    </style>
+
+    <style name="status_tv">
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingTop">1dp</item>
+        <item name="android:paddingBottom">1dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/font_12</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="AppThemeXBackBtn" parent="AppTheme">
+<!--        <item name="homeAsUpIndicator">@drawable/ic_close_white_24dp</item>-->
+    </style>
+
+    <style name="forms_font">
+        <item name="android:textSize">@dimen/font_20</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.MaterialComponents">
+        <item name="colorControlNormal">@color/gray_dark_transparent</item>
+        <item name="colorControlActivated">#FFD203</item>
+    </style>
+
+    <style name="Theme.Rating" parent="Theme.MaterialComponents">
+        <item name="colorControlNormal">@color/gray_dark_transparent</item>
+        <item name="colorControlActivated">#FFD203</item>
+    </style>
+
+    <style name="Theme.Rating.Purple" parent="Theme.MaterialComponents">
+        <item name="colorControlNormal">@color/gray_dark_transparent</item>
+        <item name="colorControlActivated">#9B47AB</item>
+        <item name="android:secondaryProgressTint">#00000000</item>
+    </style>
+
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">@dimen/font_14</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextView.GrayOutlineBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+<!--        <item name="boxStrokeColor">@color/text_input_box_stroke</item>-->
+    </style>
+
+    <style name="Menu.GrayOutlineBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+<!--        <item name="boxStrokeColor">@color/text_input_box_stroke</item>-->
+    </style>
+
+    <style name="Menu.WhiteOutlineBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+<!--        <item name="boxStrokeColor">@color/text_input_box_stroke_2</item>-->
+    </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/font_18</item>
+    </style>
+
+    <style name="Text.Header" parent="AppTheme.NoActionBar">
+        <item name="android:textSize">21sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Body" parent="AppTheme.NoActionBar">
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textFontWeight" tools:targetApi="p">400</item>
+    </style>
+
+    <!--Main toolbar title-->
+    <style name="Text.Toolbar" parent="AppTheme.NoActionBar">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/font_18</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--Main toolbar subtitle-->
+    <style name="Text.Subtitle" parent="AppTheme.NoActionBar">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/font_12</item>
+        <item name="android:textColor">#737373</item>
+    </style>
+
+    <!--Main title header-->
+    <style name="Text.H1" parent="AppTheme.NoActionBar">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/font_19</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--Main subtitle header-->
+    <style name="Text.H3" parent="AppTheme.NoActionBar">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/font_16</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--Main mini subtitle header-->
+    <style name="Text.H4" parent="AppTheme.NoActionBar">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/font_14</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.H5" parent="AppTheme.NoActionBar">
+        <item name="fontFamily">@font/lato_bold</item>
+        <item name="android:textSize">@dimen/font_13</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.H6" parent="AppTheme.NoActionBar">
+        <item name="fontFamily">@font/lato_regular</item>
+        <item name="android:textSize">@dimen/font_12</item>
+        <item name="android:textColor">#63616A</item>
+    </style>
+
+    <style name="title_style">
+        <item name="android:textSize">22sp</item>
+
+    </style>
+
+</resources>

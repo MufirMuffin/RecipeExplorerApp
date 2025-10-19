@@ -1,0 +1,131 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '2.2.10'
+    repositories {
+
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven {
+            url "http://s3.amazonaws.com/repo.commonsware.com"
+            allowInsecureProtocol = true
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.8.2'
+
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        classpath "io.realm:realm-gradle-plugin:10.19.0"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+        classpath 'com.google.gms:google-services:4.4.3'
+
+        // Add the dependency for the Crashlytics Gradle plugin
+//        classpath 'com.google.firebase:firebase-crashlytics-gradle:3.0.6'
+
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.google.com' }
+        maven {
+            url "http://s3.amazonaws.com/repo.commonsware.com"
+            allowInsecureProtocol = true
+        }
+    }
+}
+
+ext {
+
+    compileSdkVersion = 36
+    targetSdkVersion = 36
+    minSdkVersion = 28
+    supportLibVersion = '36.1.0'
+    arch_version = '1.1.1'
+
+    rxJavaVersion = '3.1.11'
+    rxAndroidVersion = '3.0.2'
+    rxKotlinVersion = '3.0.1'
+    timberVersion = '5.0.1'
+    daggerVersion = '2.57'
+    retrofitVersion = '3.0.0'
+    okHttpVersion = '5.1.0'
+    greenDaoVersion = '3.2.2'
+    crashlyticsVersion = '2.6.8'
+    gsonVersion = '2.13.1'
+    anko_version = '0.10.8'
+    renderedRecyclerViewVersion = '2.3.0'
+    advancedrecyclerview_version = '2.0.3'
+    jodaVersion = '1.4.0'
+
+    //supportLib
+    supportLib = 'androidx.legacy:legacy-support-v4:1.0.0'
+    supportLibAppCompat = 'androidx.appcompat:appcompat:1.7.1'
+    supportLibDesign = 'com.google.android.material:material:1.12.0'
+    supportLibRecyclerview = 'androidx.recyclerview:recyclerview:1.4.0'
+    supportLibCardview = 'androidx.cardview:cardview:1.0.0'
+    supportLibGridlayout = 'androidx.gridlayout:gridlayout:1.1.0'
+    supportLibWork = 'androidx.work:work-runtime-ktx:2.10.2'
+
+    //rx
+    rxJava = "io.reactivex.rxjava3:rxjava:$rxJavaVersion"
+    rxAndroid = "io.reactivex.rxjava3:rxandroid:$rxAndroidVersion"
+    rxKotlin = "io.reactivex.rxjava3:rxkotlin:$rxKotlinVersion"
+
+    //timber
+    timber = "com.jakewharton.timber:timber:$timberVersion"
+
+    //crashlytics
+    crashlytics = "com.crashlytics.sdk.android:crashlytics:$crashlyticsVersion@aar"
+
+    //dagger
+    dagger = "com.google.dagger:dagger-android:$daggerVersion"
+    daggerSupport = "com.google.dagger:dagger-android-support:$daggerVersion"
+    // if you use the support libraries
+    daggerAnnotation = "com.google.dagger:dagger-android-processor:$daggerVersion"
+    //for annotationProcessor
+    daggerApt = "com.google.dagger:dagger-compiler:$daggerVersion"
+
+    //net
+    retrofit = "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    okHttp = "com.squareup.okhttp3:okhttp:$okHttpVersion"
+    okHttpInter = "com.squareup.okhttp3:logging-interceptor:$okHttpVersion"
+
+    gson = "com.google.code.gson:gson:$gsonVersion"
+    rxJavaAdapter = "com.squareup.retrofit2:adapter-rxjava3:$retrofitVersion"
+    gsonConverter = "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    scalarsConverter = "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
+
+    //greenDao
+    greenDao = "org.greenrobot:greendao:$greenDaoVersion"
+
+    anko = "org.jetbrains.anko:anko:$anko_version"
+    ankoCommons = "org.jetbrains.anko:anko-commons:$anko_version"
+    ankoDesign = "org.jetbrains.anko:anko-design:$anko_version"
+
+    advancedRecyclerviewCore = "com.github.StephenVinouze.AdvancedRecyclerView:core:${advancedrecyclerview_version}"
+    advancedRecyclerviewSection = "com.github.StephenVinouze.AdvancedRecyclerView:section:${advancedrecyclerview_version}"
+    advancedRecyclerviewPagination = "com.github.StephenVinouze.AdvancedRecyclerView:pagination:${advancedrecyclerview_version}"
+    advancedRecyclerviewGesture = "com.github.StephenVinouze.AdvancedRecyclerView:gesture:${advancedrecyclerview_version}"
+
+    renderedRecyclerView = "com.github.vivchar:RendererRecyclerViewAdapter:$renderedRecyclerViewVersion"
+
+    joda = "com.github.curioustechizen.android-ago:library:$jodaVersion"
+
+    buildTime = new Date().format("yyyy-MM-dd'T'HH:mm'Z'", TimeZone.getTimeZone("UTC"))
+
+    lifecycle_runtime = 'androidx.lifecycle:lifecycle-runtime:2.9.2'
+    lifecycle_extension = 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    lifecycle_compiler = 'androidx.lifecycle:lifecycle-compiler:2.9.2'
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}

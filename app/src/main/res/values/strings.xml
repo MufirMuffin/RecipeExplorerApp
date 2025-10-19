@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Recipe Explorer App 1</string>
+
+    <string name="search_placeholder">Search here</string>
+
+    <string name="no_record">Nothing here</string>
+    <string name="error">Error</string>
+    <string name="dismiss">Dismiss</string>
+
+<!--    error handling-->
+    <string name="err_general">Something went wrong. \nPlease try again later.</string>
+    <string name="err400_request_error_resource_not_available">Request error, resource not available</string>
+    <string name="err401_unauthorized">Unauthorized Access</string>
+    <string name="err403_your_account_does_not_exist">Your account does not exists</string>
+    <string name="err404_unable_to_reach">Unable to reach the URL or endpoint</string>
+    <string name="err405_method_not_allowed">Action Not Allowed</string>
+    <string name="err415_unsupported_file_format">Unsupported file format, please resend</string>
+    <string name="err422_request_failed_response">Request fail to response</string>
+    <string name="err429_too_many_request">Too many request, please retry</string>
+    <string name="err500_server_error">Server error, please retry</string>
+    <string name="err502_bad_gateway">Bad Gateway</string>
+    <string name="err503_service_unavailable">Service Temporarily Unavailable</string>
+    <string name="err504_connection_timeout">Connection timeout, please retry</string>
+    <string name="no_internet_connection">System offline, no internet connection</string>
+    <string name="retry">retry</string>
+    <string name="network_error">Network Error</string>
+    <string name="timeout">Timeout</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+
+
+
+</resources>

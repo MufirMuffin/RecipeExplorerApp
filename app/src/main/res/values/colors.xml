@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0955A1</color>
+    <color name="colorPrimaryDark">#045DE9</color>
+    <color name="colorPrimaryLight">#09C6F9</color>
+    <color name="colorAccent">#0955A1</color>
+
+    <color name="colorToolbar">#B0DCF2</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="gray">#aaa</color>
+    <color name="gray2">#EFEFEF</color>
+    <color name="black">#000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="setting_color">#444</color>
+    <color name="semi_transparent_bg">#cc000000</color>
+
+    <color name="black_87">#222222</color>
+    <color name="black_54">#767676</color>
+
+    <color name="transparent2">#ae313335</color>
+    <color name="transparent3">#ABAFB3</color>
+    <color name="transparent4">#ae151617</color>
+
+    <color name="gray_light">#e8e8e8</color>
+    <color name="gray_transparent">#a6efefef</color>
+    <color name="gray_dark">#858585</color>
+    <color name="gray_dark_transparent">#ae858585</color>
+    <color name="gray_darkest">#ae282828</color>
+
+    <color name="green">#38be55</color>
+    <color name="green_dark">#2da346</color>
+    <color name="panel">#eee</color>
+
+    <color name="grey">#ccc</color>
+
+    <color name="logout">#F44336</color>
+    <color name="delete">#F44336</color>
+    <color name="severity_1">#F44336</color>
+    <color name="severity_2">#F3811C</color>
+    <color name="severity_3">#288F54</color>
+    <color name="severity_4">#4CAF50</color>
+    <color name="severity_5">#4CAF50</color>
+    <color name="disabled_grey">#d6d7d7</color>
+    <color name="disabled_text_color">#a6a7a7</color>
+
+    <color name="user_incoming">#43A047</color>
+    <!--    <color name="system_incoming">#673AB7</color>-->
+    <color name="system_incoming">#304cb0</color>
+    <color name="incident_link">#231367</color>
+    <color name="sky_blue">#64B5F6</color>
+
+    <color name="broadcast_message_background_color">#ebebeb</color>
+    <color name="broadcast_message_text_color">#304cb0</color>
+
+    <color name="blueish_gray">#546E7A</color>
+    <color name="slate_gray">#778899</color>
+
+    <color name="red">#ff0000</color>
+    <color name="purple">#aa00ff</color>
+    <color name="blue">#1971E7</color>
+
+    <color name="light_yellow">#f6c342</color>
+    <color name="light_green">#8eb021</color>
+
+    <color name="solid_darkest_gray">#373737</color>
+
+    <color name="rating_yellow">#FFD203</color>
+    <color name="dark_yellow">#cccc00</color>
+    <color name="yellow">#fffb0a</color>
+    <color name="suspended_status">#9E9D24</color>
+
+    <color name="sla_passed">#4CAF50</color>
+    <color name="sla_failed">#F44336</color>
+    <color name="strip_new">#56ab2f</color>
+    <color name="strip_assign">#F37335</color>
+    <color name="strip_checkout">#5F0A87</color>
+    <color name="strip_progress">#FF9800</color>
+    <color name="strip_on_hold">#F44336</color>
+    <color name="strip_reassign">#f5d000</color>
+
+    <color name="cream_red">#ffd0d2</color>
+    <color name="cream_yellow">#fffdd0</color>
+    <color name="cream_blue">#d0fffd</color>
+    <color name="cream_purple">#d0d2ff</color>
+
+    <color name="amber">#FDC830</color>
+    <color name="green_resolve">#a8e063</color>
+
+    <color name="dark_gray_1">#535353</color>
+    <color name="light_gray">#E9E9E9</color>
+    <color name="light_gray_2">#808080</color>
+    <color name="light_gray_3">#8C8C8C</color>
+
+    <color name="chip_background">#E3F2FD</color>
+    <color name="chip_text">#1976D2</color>
+</resources>
